@@ -6,7 +6,11 @@ module.exports = withBundleAnalyzer({
   reactStrictMode: true,
   swcMinify: true,
   images: {
-    domains: ["vercel.saleor.cloud", "img.youtube.com"],
+    domains: [
+      "vercel.saleor.cloud",
+      "img.youtube.com",
+      "newmarket.unfurlproject.com",
+    ],
     formats: ["image/avif", "image/webp"],
   },
   async redirects() {
