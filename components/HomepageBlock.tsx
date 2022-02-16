@@ -15,6 +15,7 @@ export interface HomepageBlockProps {
 }
 
 export const HomepageBlock = ({ menuItem }: HomepageBlockProps) => {
+  console.log('menuItem', menuItem);
   const paths = usePaths();
   const t = useIntl();
   const filter: ProductFilterInput = {};
@@ -39,6 +40,7 @@ export const HomepageBlock = ({ menuItem }: HomepageBlockProps) => {
     <div className="pb-8">
       <h1 className="text-3xl font-extrabold tracking-tight text-gray-900 pb-4">
         {translate(menuItem, "name")}
+        HIH1
       </h1>
       <ProductCollection filter={filter} allowMore={false} />
       <div className="flex flex-row-reverse p-4">

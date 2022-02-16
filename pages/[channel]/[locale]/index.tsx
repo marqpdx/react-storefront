@@ -20,15 +20,21 @@ import {
 
 const Home = ({ menuData }: InferGetStaticPropsType<typeof getStaticProps>) => {
   const t = useIntl();
+  console.log('menuData', menuData);
   return (
     <>
       <BaseSeo />
       <div className="py-10">
+
         <header className="mb-4">
-          <div className="max-w-7xl mx-auto px-8"></div>
+          <div className="max-w-7xl mx-auto px-8 text-3xl">Welcome to Freedom Harvest's Newmarket @ Unfurl</div>
         </header>
         <main>
           <div className="max-w-7xl mx-auto px-8">
+            <div className="flex">
+              <div>Left</div>
+              <div>Right</div>
+            </div>
             {menuData?.menu?.items?.map((m) => {
               if (!!m) return <HomepageBlock key={m.id} menuItem={m} />;
             })}
@@ -43,6 +49,7 @@ export default Home;
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const paths = homepagePaths();
+  console.log('paths', paths);
   return {
     paths,
     fallback: "blocking",
@@ -51,12 +58,14 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps = async (context: GetStaticPropsContext) => {
   const result: ApolloQueryResult<HomepageBlocksQuery> =
+
     await apolloClient.query<HomepageBlocksQuery, HomepageBlocksQueryVariables>(
       {
         query: HomepageBlocksQueryDocument,
         variables: { slug: "homepage", ...contextToRegionQuery(context) },
       }
     );
+    console.log('HomepageBlocksQuery: context', context)
   return {
     props: {
       menuData: result?.data,

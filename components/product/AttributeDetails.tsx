@@ -23,6 +23,7 @@ export const AttributeDetails = ({
   if (attributes.length === 0) {
     return null;
   }
+  console.log('product details: ', product);
   return (
     <div>
       <p className="text-lg mt-2 font-medium text-gray-500">

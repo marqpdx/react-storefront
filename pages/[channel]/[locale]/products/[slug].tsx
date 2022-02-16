@@ -141,7 +141,23 @@ const ProductPage = ({
     loadingAddToCheckout;
 
   const description = translate(product, "description");
+  console.log('prod slug prod', product);
 
+  //zzml
+  // let priceDisplay =
+  //   product.pricing?.priceRange?.start?.gross.localizedAmount || "";
+  // if (
+  //   product.pricing?.priceRange?.start?.gross.amount !==
+  //   product.pricing?.priceRange?.stop?.gross.amount
+  // ) {
+  //   priceDisplay = "from " + priceDisplay;
+  // }
+  console.log('product.pricing1', product.pricing);
+  console.log('product.pricing2', product.pricing?.priceRange?.start?.gross.currency);
+  console.log('product.pricing3', product.pricing?.priceRange?.start?.gross.amount);
+
+  let thePriceAmount = product.pricing?.priceRange?.start?.gross.amount;
+  let theCurrency = product.pricing?.priceRange?.start?.gross.currency;
   return (
     <>
       <ProductPageSeo product={product} />
@@ -203,10 +219,14 @@ const ProductPage = ({
 
           {!!addToCartError && <p>{addToCartError}</p>}
 
+          <div>Price: {thePriceAmount}, {theCurrency}</div>
+
           {description && (
-            <div className="text-base text-gray-700 space-y-6">
-              <RichText jsonStringData={description} />
-            </div>
+            <>
+              <div className="text-base text-gray-700 space-y-6">
+                <RichText jsonStringData={description} />
+              </div>
+            </>
           )}
 
           <AttributeDetails

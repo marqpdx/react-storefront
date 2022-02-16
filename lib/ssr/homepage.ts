@@ -16,5 +16,6 @@ export const homepagePaths = () => {
       },
     })
   );
+  console.log('hpP paths', paths);
   return paths;
 };

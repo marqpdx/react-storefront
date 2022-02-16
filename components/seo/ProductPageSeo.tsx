@@ -7,9 +7,9 @@ interface ProductPageSeoProps {
 }
 
 export const ProductPageSeo = ({ product }: ProductPageSeoProps) => {
-  const title = `${product?.seoTitle} - Saleor Tutorial`;
+  const title = `${product?.seoTitle} - Newmarket at Freedom Harvest`;
   const description =
-    product?.seoDescription || "Welcome to tutorial storefront.";
+    product?.seoDescription || "Welcome to Newmarket at Freedom Harvest storefront.";
   const thumbnailUrl = product.thumbnail?.url || "";
   const thumbnailAlt = product.thumbnail?.alt || title;
 
@@ -26,7 +26,7 @@ export const ProductPageSeo = ({ product }: ProductPageSeoProps) => {
             alt: thumbnailAlt,
           },
         ],
-        site_name: "Saleor Tutorial",
+        site_name: "Newmarket at Freedom Harvest",
       }}
     />
   );
