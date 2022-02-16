@@ -27,7 +27,7 @@ const Home = ({ menuData }: InferGetStaticPropsType<typeof getStaticProps>) => {
       <div className="py-10">
 
         <header className="mb-4">
-          <div className="max-w-7xl mx-auto px-8 text-3xl">Welcome to Freedom Harvest's Newmarket @ Unfurl</div>
+          <div className="max-w-7xl mx-auto px-8 text-3xl">Welcome to the Freedom Harvest Newmarket @ Unfurl</div>
         </header>
         <main>
           <div className="max-w-7xl mx-auto px-8">
