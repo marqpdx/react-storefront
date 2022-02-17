@@ -9,7 +9,7 @@ module.exports = withBundleAnalyzer({
     domains: [
       "vercel.saleor.cloud",
       "img.youtube.com",
-      "newmarket.unfurlproject.com",
+      "store.unfurlproject.com",
     ],
     formats: ["image/avif", "image/webp"],
   },
